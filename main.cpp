@@ -1,11 +1,10 @@
 //
 //  main.cpp
-//  lab1
+//  Lab1
 //
-//  Created by Jigme Sherpa on 8/30/16.
+//  Created by Jigme Sherpa on 9/12/16.
 //  Copyright © 2016 Jigme Sherpa. All rights reserved.
 //
-
 
 #include <iostream>
 #include <fstream>
@@ -17,83 +16,82 @@ using namespace std;
 
 
 
-const string letters ="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const string kletters ="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 
 
-int stringLength;
-int numberofwords;
+int string_Length;
+int number_of_words;
 
 const int MAX_Number = 10000;
 const int num_times = 3;
 string letterlist[MAX_Number];
 char genRandom()  // Random string generator function.
 {
-    return letters[rand() % letters.length()];
+    return kletters[rand() % kletters.length()];
 }
 ofstream outfile("outfile.txt");
-long partOne(){
+long PartOne(){
     
     cout<<"How Long do you want the string to be?"<<endl;
-    cin>>stringLength;
+    cin>>string_Length;
     cout<<"How many numbers of words do you want?"<<endl;
-    cin>>numberofwords;
-    for(long j=0;j<numberofwords; j++)
+    cin>>number_of_words;
+    for(long j=0;j<number_of_words; j++)
     {
-        string word= "";
-        for(long z=0; z < stringLength; z++)
+        string words_to_hold= "";
+        for(long z=0; z < string_Length; z++)
         {
-            word=word+genRandom();
+            words_to_hold= words_to_hold+genRandom();
             
         }
-        cout<<word<<endl;
-       // letterlist[j]= word;
-        outfile<<word<<endl;
+        cout<<words_to_hold<<endl;
+        // letterlist[j]= word;
+        outfile<<words_to_hold<<endl;
         
         
     }
     outfile.close();
-    return numberofwords;
+    return number_of_words;
 }
-void partTwo(){
-    long numberofwords= partOne();
-    string filename= "outfile.txt";
-    fstream ifs(filename.c_str());
-    string* lines= new string[numberofwords];
+void PartTwo(){
+    long numberofwords= PartOne();
+    string file_name= "outfile.txt";
+    fstream ifs(file_name.c_str());
+    string* lines_to_get= new string[numberofwords];
     
     
     cout<<"----------------------------"<<endl;
     cout<<"Unsorted Strings"<<endl;
     for (long i=0; i<numberofwords; i++) {
-        getline(ifs,lines[i]);
-        cout<<lines[i]<<endl;
+        getline(ifs,lines_to_get[i]);
+        cout<<lines_to_get[i]<<endl;
         cout<<i<<endl;
-    
+        
     }
-   
+    
     cout<<"----------------------------"<<endl;
     cout<<"Sorted strings"<<endl;
-    sort(lines, lines+numberofwords);
+    sort(lines_to_get, lines_to_get+numberofwords);
     for (long i=0; i<numberofwords; i++) {
-        cout<<lines[i]<<endl;
+        cout<<lines_to_get[i]<<endl;
         //ifs<<lines[i]<<endl;
     }
     
     cout<<"---------------------------------"<<endl;
-   /* for (short i=0; i <num_times; i++) {
-        sort(lines, lines+numberofwords);
-        cout<<lines[i]<<endl;
-    }*/
+    /* for (short i=0; i <num_times; i++) {
+     sort(lines, lines+numberofwords);
+     cout<<lines[i]<<endl;
+     }*/
     
 }
 
 int main()
-    {
-        
-        partTwo();
-        
-        return 0;
-        
-    }
+{
+    
+    PartTwo();
+    
+    return 0;
+    
+}
 
-   

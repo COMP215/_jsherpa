@@ -1,0 +1,2 @@
+Lab 04
+This folder has two data structures a linked list and a Binary tree. They both input strings and stores them within and prints it out when needed. You can also search for the string in the data structures.

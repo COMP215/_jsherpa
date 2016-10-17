@@ -20,7 +20,7 @@ int main() {
     ifstream fin;
     string the_word;
     string the_sorted_words;
-    fin.open("foowords.txt");
+    fin.open("words1000.txt");
     while (!fin.eof()) {
         getline(fin,the_word);
         people_names->Insert(the_word);

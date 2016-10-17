@@ -10,7 +10,10 @@
 
 #include <iostream>
 #include "linkedlist.hpp"
+#include <fstream>
+
 using namespace std;
+
 
 int main() {
     
@@ -18,6 +21,16 @@ int main() {
     people_names->Insert("gousie");
     people_names->Insert("bloch");
     people_names->Insert("armstrong");
+    ifstream fin;
+    string the_word;
+    string the_sorted_words;
+    fin.open("foowords1000.txt");
+    while (!fin.eof()) {
+        getline(fin,the_word);
+        people_names->Insert(the_word);
+        
+    }
+
     
     
     people_names->Print_list();

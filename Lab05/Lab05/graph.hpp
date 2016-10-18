@@ -16,8 +16,9 @@ class Node
 {
 public:
     string name_;
-    vector <Node> edges;
     int weight_;
+    vector <Node> edges;
+    string sourceNode;
     Node();
     Node(string passed_name);
     void addEdge(Node* newEdge);
@@ -28,13 +29,12 @@ class Graph
 {
 public:
     Graph();
+    int SearchGraph(string vertex_name);
     void AddVertex(string vertex_name);
-    void AddEdge(string source, string target,int weight);
+    void AddEdge(string source, string target, int weight);
+    void addToGraph(string vertex_name, string edge,int weight);
     void ToGraphviz(string file_name);
-    void addToGraph(string vertex_name, string edge);
-    Node* SearchGraph(string vertex_name);
+    void PrimMST();
     vector <Node> vertices;
 };
-
-
 #endif /* graph_hpp */

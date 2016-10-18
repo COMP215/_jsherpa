@@ -1,0 +1,8 @@
+graph G {
+node [shape=square];
+node [color= blue];
+a--j [ Label = 3 ];
+j--k [ Label = 4 ];
+k--d [ Label = 6 ];
+d--f [ Label = 1 ];
+}

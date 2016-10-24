@@ -24,4 +24,6 @@ int main()
     mygraph.AddEdge("a","j",3);
     mygraph.AddEdge("j","k",4);
     mygraph.ToGraphviz("graph1.dot");
+    cout<<"enter the edge that you are searching"<<endl;
+    
 }

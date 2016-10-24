@@ -36,5 +36,6 @@ public:
     void ToGraphviz(string file_name);
     void PrimMST();
     vector <Node> vertices;
+    string nameSearched;
 };
 #endif /* graph_hpp */

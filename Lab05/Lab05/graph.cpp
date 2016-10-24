@@ -133,6 +133,13 @@ int Graph::SearchGraph(string vertex_name)
 }
 
 void Graph::PrimMST(){
+    cin>>nameSearched;
+    for(int i = 0; i<vertices.size();i++){
+        if(vertices.edge.name == nameSearched){
+            
+        }
+    }
+    
     
     
 }
